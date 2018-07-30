@@ -13,13 +13,33 @@ Quick way to consistently set up and connect to an ec2 linux instance with my pe
 
 # Editing Remote Files
 
+If you want to edit files on the remote machine you are connected to via SSH, you essentially have to use command line editors (e.g. vim). If you want to use something fancier, like vscode or sublime text you have two options:
+1. Edit everything on a different machine and commit / push to git. Git pull and only run on the remote machine without any editing. For any minimal editing / config on the remote machine, get friendly with vim.
+2. Set up remote vscode. This just allows you to edit a single file at a time (not an entire folder). See https://codeyarns.com/2018/05/03/how-to-edit-remote-files-using-remote-vscode/​​.
+
 # Running Long-Running Tasks
+1. Run ``screen`` and initiate your long-running process
+2. To detach, enter ``Ctrl-a, d`` and now you can disconnect.
+3. When you reconnect, enter ``screen -r`` to reattach and continue your long-running process.
+4. If more than one screens are running, you can run ``screen -ls`` to list.
 
 # Initial Setup (One Time)
 
 1. To set up the ``python`` alias to point to ``python3``, run ``echo "alias python=python3" >> .bash_profile``
+2. Set up git lfs using the steps here: https://github.com/git-lfs/git-lfs/wiki/Installation#ubuntu. Specifically, run:
+    1. ``sudo apt-get install software-properties-common``
+    2. ``sudo add-apt-repository ppa:git-core/ppa``
+    3. ``curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash``
+    4. ``sudo apt-get install git-lfs``
+    5. ``git lfs install``
+3. Clone your repos, then make sure credentials are persisted:
+    1. ``git clone https://.../foo.git``
+    2. Specify username and password (ideally a single use token) to clone
+    3. cd into the cloned repo dir, then run ``git config credential.helper store``
+    4. Run ``git pull`` again, then specify the username and password again. This time it will be persisted.
+4. Set up ``screen`` for long-running processes that keep running after SSH disconnects: ``sudo apt install screen``
 
-# System Maintenance (Period)
+# System Maintenance (Periodic)
 
 1. Update list of available packages: ``sudo apt update --yes``
 2. Upgrade packages: ``sudo apt upgrade --yes``
