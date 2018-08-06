@@ -32,6 +32,9 @@ If you want to edit files on the remote machine you are connected to via SSH, yo
     3. ``curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash``
     4. ``sudo apt-get install git-lfs``
     5. ``git lfs install --skip-smudge``
+2. Configure git username:
+    1. ``git config --global user.name "Your Name"``
+    2. ``git config --global user.email you@example.com``
 2. Clone your repos, then make sure credentials are persisted:
     1. ``git clone https://.../foo.git``
     2. Specify username and password (ideally a single use token) to clone
