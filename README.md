@@ -42,6 +42,9 @@ If you want to edit files on the remote machine you are connected to via SSH, yo
     4. Run ``git pull`` again, then specify the username and password again. This time it will be persisted.
 3. Set up ``screen`` for long-running processes that keep running after SSH disconnects: ``sudo apt install screen``
 
+# Jupyter Notebooks
+Run remote Jupyter using the instructions here: https://medium.com/@margaretmz/setting-up-aws-ec2-for-running-jupyter-notebook-on-gpu-c281231fad3f
+
 # System Maintenance (Periodic)
 
 1. Update list of available packages: ``sudo apt update --yes``
