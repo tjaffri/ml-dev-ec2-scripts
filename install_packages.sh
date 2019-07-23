@@ -69,7 +69,5 @@ wget https://vstsagentpackage.azureedge.net/agent/2.149.2/vsts-agent-linux-x64-2
 mkdir myagent && cd myagent
 tar -xzf ../vsts-agent-linux-x64-2.149.2.tar.gz
 ./config.sh # requires input
-sudo mkdir /data/_work
-sudo chmod 777 /data/_work
 sudo ./svc.sh install
 sudo ./svc.sh start
