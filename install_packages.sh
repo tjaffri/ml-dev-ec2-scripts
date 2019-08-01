@@ -65,9 +65,9 @@ sudo apt-get install -y nodejs
 
 ############ agent extract and setup
 cd ~
-wget https://vstsagentpackage.azureedge.net/agent/2.149.2/vsts-agent-linux-x64-2.149.2.tar.gz
+wget https://vstsagentpackage.azureedge.net/agent/2.155.1/vsts-agent-linux-x64-2.155.1.tar.gz
 mkdir myagent && cd myagent
-tar -xzf ../vsts-agent-linux-x64-2.149.2.tar.gz
+tar -xzf ../vsts-agent-linux-x64-2.155.1.tar.gz
 ./config.sh # requires input
 sudo ./svc.sh install
 sudo ./svc.sh start
