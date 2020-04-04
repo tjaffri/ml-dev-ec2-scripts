@@ -24,7 +24,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 # install docker
 sudo apt-get update --yes
 sudo apt-get install docker-ce
-sudo usermod -aG docker ubuntu
 
 # Install nvidia-docker2 and reload the Docker daemon configuration
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
