@@ -1,3 +1,5 @@
+set -e
+
 sudo apt-get update --yes
 
 ############ pip and git
