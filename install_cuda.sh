@@ -36,8 +36,8 @@ sudo apt-get install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 
 # allow non-sudo access to docker
-echo "signing out and signing in..."
 sudo usermod -aG docker $USER
+echo "signing out and signing in..."
 sudo su - $USER
 
 # Test nvidia-smi with the latest official CUDA image
