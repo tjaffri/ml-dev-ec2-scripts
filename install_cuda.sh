@@ -38,7 +38,7 @@ sudo pkill -SIGHUP dockerd
 # allow non-sudo access to docker
 sudo usermod -aG docker $USER
 echo "signing out and signing in..."
-sudo su - $USER
+sudo su - $USER && exit
 
 # Test nvidia-smi with the latest official CUDA image
 docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
