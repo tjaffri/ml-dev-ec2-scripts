@@ -36,7 +36,7 @@ sudo apt-get install -y nvidia-docker2
 sudo pkill -SIGHUP dockerd
 
 # Test nvidia-smi with the latest official CUDA image
-docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
 echo "**** if the above NVIDIA-SMI output shows your GPU, you are good to go!"
 echo "****** restart this VM"
