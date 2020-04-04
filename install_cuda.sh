@@ -6,7 +6,7 @@ sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/
 sudo dpkg -i /tmp/${CUDA_REPO_PKG}
 
 sudo apt-get update --yes
-sudo apt-get upgraade --yes
+sudo apt-get upgrade --yes
 sudo apt-get install cuda-drivers --yes
 sudo apt-get install cuda --yes
 
